@@ -260,15 +260,25 @@ header.scrolled .mobile-menu-btn {
    6. Hero
    ========================================================================== */
 
+/* Default για κινητά (μικρή εικόνα) */
 .hero {
-    height:     100vh;
-    background:
+    height: 100vh;
+    background: 
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
         url('../images/showroom1-mobile.webp') center / cover no-repeat;
-    display:    flex;
+    display: flex;
     align-items: center;
-    position:   relative;
-    overflow:   hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Για οθόνες μεγαλύτερες από 768px (Desktop - μεγάλη εικόνα) */
+@media (min-width: 769px) {
+    .hero {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+            url('../images/showroom1.webp');
+    }
 }
 
 .hero::before {

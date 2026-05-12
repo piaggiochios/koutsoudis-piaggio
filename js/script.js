@@ -217,7 +217,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // =========================================================================
 
     function init() {
-        changeLanguage(currentLang);
+        // Τρέξε τη γλώσσα ΜΟΝΟ αν δεν είναι η προεπιλεγμένη (Ελληνικά), 
+        // για να γλιτώσεις επεξεργασία στο start-up.
+        if (currentLang !== 'el') {
+            changeLanguage(currentLang);
+        }
 
         langButtons.forEach(btn => {
             btn.addEventListener('click', function () {
@@ -236,9 +240,13 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        initScrollAnimations();
-        initSlideshow('.about-image img');
-        initSlideshow('.contact-image img');
+        // Δώσε προτεραιότητα στο layout και μετά ξεκίνα τα animations
+        setTimeout(() => {
+            initScrollAnimations();
+            initSlideshow('.about-image img');
+            initSlideshow('.contact-image img');
+        }, 1000); // 1 δευτερόλεπτο καθυστέρηση
+
         handleScrollEffects();
     }
 

@@ -114,12 +114,15 @@
     /* --- Hero --- */
 
     .hero {
-        height:  auto;
-        padding: 6rem 0 4rem;
+        height:     auto;
+        min-height: 100svh;           /* fills screen but allows growth */
+        padding:    8rem 0 5rem;      /* top clears the fixed header (~70px) + breathing room */
+        align-items: flex-start;      /* content starts near top, not middle */
     }
 
     .hero-content {
         text-align: center;
+        padding:    0 0.5rem;         /* prevent text touching screen edges */
     }
 
     .hero-buttons {
@@ -175,6 +178,11 @@
 
     .hero p {
         font-size: 1rem;
+    }
+
+    /* Hero — extra top clearance on very small screens */
+    .hero {
+        padding: 7rem 0 4rem;
     }
 
     /* Logo */

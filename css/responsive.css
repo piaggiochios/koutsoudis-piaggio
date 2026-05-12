@@ -124,28 +124,29 @@ section,
     /* --- Hero --- */
 
     .hero {
-        height:     auto;
-        min-height: 100svh;           /* fills screen but allows growth */
-        padding:    8rem 0 5rem;      /* top clears the fixed header (~70px) + breathing room */
-        align-items: flex-start;      /* content starts near top, not middle */
+        height:      auto;
+        min-height:  100svh;
+        padding:     8rem 0 5rem;
+        align-items: center;           /* vertically center content in the screen */
     }
 
     .hero-content {
         text-align: center;
-        padding:    0 0.5rem;         /* prevent text touching screen edges */
+        padding:    0 1.5rem;
+        width:      100%;
     }
 
     .hero-buttons {
-        flex-direction: column;
-        align-items:    stretch;        /* buttons fill width without global .btn override */
-        gap:            0.75rem;
-        margin-top:     2rem;
+        flex-direction:  column;
+        align-items:     center;       /* buttons shrink to their content, centered */
+        gap:             0.75rem;
+        margin-top:      2rem;
     }
 
     .hero .btn {
-        width:         100%;
-        margin-bottom: 0;              /* gap handles spacing, no double gap */
-        text-align:    center;
+        width:      auto;              /* don't stretch full-width */
+        min-width:  220px;             /* consistent size without being huge */
+        text-align: center;
     }
 
     /* --- About Slideshow --- */
@@ -222,10 +223,11 @@ section,
         height: 30px;
     }
 
-    /* Buttons */
+    /* Buttons — keep reasonable size on very small screens */
     .hero .btn {
-        font-size: 0.85rem;
-        padding:   0.75rem 1.5rem;
+        min-width:  180px;
+        font-size:  0.9rem;
+        padding:    0.8rem 1.75rem;
     }
 
     /* Language Switcher */

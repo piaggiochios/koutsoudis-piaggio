@@ -78,6 +78,49 @@ section,
         height: 35px;
     }
 
+    /* --- Header layout on mobile ---
+       Two rows: [logo] on left, [ΕΛ|EN  ☰] on right, all in one flex bar */
+    header {
+        padding: 0.75rem 0;
+    }
+
+    .header-container {
+        flex-wrap:   wrap;
+        align-items: center;
+        gap:         0;
+    }
+
+    /* Logo takes up left side */
+    .logo {
+        flex:      1;
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        height:       30px;
+        margin-right: 6px;
+    }
+
+    /* Right side: lang switcher + hamburger sit together */
+    .language-switcher {
+        margin-left:  0.75rem;
+        margin-top:   0;
+        order:        2;
+    }
+
+    .lang-btn {
+        padding:   0.35rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .mobile-menu-btn {
+        display:     block;
+        z-index:     1100;
+        order:       3;
+        margin-left: 0.5rem;
+        font-size:   1.3rem;
+    }
+
     /* --- Mobile Nav (slide-in) --- */
 
     .nav-menu {
@@ -111,14 +154,22 @@ section,
     }
 
     .mobile-menu-btn {
-        display: block;
-        z-index: 1100;
+        display:     block;
+        z-index:     1100;
+        font-size:   1.3rem;       /* slightly smaller hamburger icon */
+        padding:     0.25rem;
     }
 
-    /* Language Switcher */
+    /* Language Switcher — keep in header bar, just compact it */
     .language-switcher {
-        margin-top:      2rem;
-        justify-content: center;
+        margin-left:   0.5rem;
+        margin-top:    0;
+        border-radius: 4px;
+    }
+
+    .lang-btn {
+        padding:   0.35rem 0.55rem;
+        font-size: 0.75rem;
     }
 
     /* --- Hero --- */
@@ -138,15 +189,23 @@ section,
 
     .hero-buttons {
         flex-direction:  column;
-        align-items:     center;       /* buttons shrink to their content, centered */
+        align-items:     center;
         gap:             0.75rem;
         margin-top:      2rem;
     }
 
     .hero .btn {
-        width:      auto;              /* don't stretch full-width */
-        min-width:  220px;             /* consistent size without being huge */
+        width:      auto;
+        min-width:  200px;
+        max-width:  280px;         /* cap width so buttons don't stretch too far */
         text-align: center;
+    }
+
+    /* Prevent subtitle from breaking mid-dot */
+    .hero p {
+        white-space: normal;
+        word-break:  keep-all;
+        font-size:   1rem;
     }
 
     /* --- About Slideshow --- */

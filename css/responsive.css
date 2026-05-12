@@ -1,17 +1,16 @@
 /* ==========================================================================
-   Piaggio Koutsoudis — Responsive Stylesheet
+   Piaggio Koutsoudis — Full Updated Responsive Stylesheet
    ========================================================================== */
 
-
-/* ==========================================================================
-   1. Base (all screens)
-   ========================================================================== */
+/* --- 1. Base (all screens) --- */
 
 .logo-img {
     height: 40px;
+    width: auto;
+    display: block;
 }
 
-/* Prevent fixed header from covering section anchors on all screen sizes */
+/* Prevent fixed header from covering section anchors */
 section,
 .brands-showcase,
 .about,
@@ -21,10 +20,7 @@ section,
     scroll-margin-top: 80px;
 }
 
-
-/* ==========================================================================
-   2. Tablet  —  max-width: 992px
-   ========================================================================== */
+/* --- 2. Tablet — max-width: 992px --- */
 
 @media (max-width: 992px) {
 
@@ -36,12 +32,12 @@ section,
     .about-container,
     .contact-container {
         grid-template-columns: 1fr;
-        gap:                   3rem;
+        gap: 3rem;
     }
 
     /* About slideshow */
     .about-image {
-        order:  -1;
+        order: -1;
         height: 300px;
     }
 
@@ -54,13 +50,9 @@ section,
     .language-switcher {
         margin-left: 1rem;
     }
-
 }
 
-
-/* ==========================================================================
-   3. Mobile  —  max-width: 768px
-   ========================================================================== */
+/* --- 3. Mobile — max-width: 768px --- */
 
 @media (max-width: 768px) {
 
@@ -73,69 +65,67 @@ section,
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
 
-    /* Logo */
-    .logo-img {
-        height: 35px;
-    }
-
-    /* --- Header layout on mobile ---
-       Two rows: [logo] on left, [ΕΛ|EN  ☰] on right, all in one flex bar */
+    /* --- Header layout (Alignment Fix) --- */
     header {
         padding: 0.75rem 0;
     }
 
     .header-container {
-        flex-wrap:   wrap;
-        align-items: center;
-        gap:         0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Ευθυγράμμιση στο κέντρο */
+        flex-wrap: nowrap;
     }
 
-    /* Logo takes up left side */
+    /* Logo - Left side */
     .logo {
-        flex:      1;
-        font-size: 1rem;
+        flex: 1;
+        display: flex;
+        align-items: center;
     }
 
     .logo-img {
-        height:       30px;
-        margin-right: 6px;
+        height: 35px; /* Μεγάλο και καθαρό */
+        margin-right: 8px;
     }
 
-    /* Right side: lang switcher + hamburger sit together */
+    /* Language & Hamburger - Right side */
     .language-switcher {
-        margin-left:  0.75rem;
-        margin-top:   0;
-        order:        2;
+        margin: 0 0.5rem 0 0.75rem; /* Καθαρά margins */
+        order: 2;
+        display: flex;
+        align-items: center;
     }
 
     .lang-btn {
-        padding:   0.35rem 0.6rem;
-        font-size: 0.75rem;
+        padding: 0.35rem 0.6rem;
+        font-size: 0.8rem;
+        line-height: 1;
     }
 
     .mobile-menu-btn {
-        display:     block;
-        z-index:     1100;
-        order:       3;
+        display: block;
+        z-index: 1100;
+        order: 3;
         margin-left: 0.5rem;
-        font-size:   1.3rem;
+        font-size: 1.4rem;
+        line-height: 1;
     }
 
     /* --- Mobile Nav (slide-in) --- */
-
     .nav-menu {
-        position:       fixed;
-        top:            0;
-        right:          -100%;
-        height:         100vh;
-        width:          260px;
-        background:     var(--white);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 260px;
+        background: var(--white);
         flex-direction: column;
-        padding:        5rem 2rem;
-        box-shadow:     -5px 0 20px rgba(0, 0, 0, 0.1);
-        display:        flex;
-        z-index:        1000;
-        transition:     right 0.3s ease;
+        padding: 5rem 2rem;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        z-index: 1000;
+        transition: right 0.3s ease;
     }
 
     .nav-menu.active {
@@ -147,199 +137,114 @@ section,
     }
 
     .nav-menu li a {
-        color:       var(--dark-gray);
-        font-size:   1.1rem;
-        padding:     0.75rem 0;
+        color: var(--dark-gray);
+        font-size: 1.1rem;
+        padding: 0.75rem 0;
         text-shadow: none;
     }
 
-    .mobile-menu-btn {
-        display:     block;
-        z-index:     1100;
-        font-size:   1.3rem;       /* slightly smaller hamburger icon */
-        padding:     0.25rem;
-    }
-
-    /* Language Switcher — keep in header bar, just compact it */
-    .language-switcher {
-        margin-left:   0.5rem;
-        margin-top:    0;
-        border-radius: 4px;
-    }
-
-    .lang-btn {
-        padding:   0.35rem 0.55rem;
-        font-size: 0.75rem;
-    }
-
     /* --- Hero --- */
-
     .hero {
-        height:      auto;
-        min-height:  100svh;
-        padding:     8rem 0 5rem;
-        align-items: center;           /* vertically center content in the screen */
+        height: auto;
+        min-height: 100svh;
+        padding: 8rem 0 5rem;
+        align-items: center;
     }
 
     .hero-content {
         text-align: center;
-        padding:    0 1.5rem;
-        width:      100%;
+        padding: 0 1.5rem;
+        width: 100%;
     }
 
     .hero-buttons {
-        flex-direction:  column;
-        align-items:     center;
-        gap:             0.75rem;
-        margin-top:      2rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
     }
 
     .hero .btn {
-        width:      auto;
-        min-width:  200px;
-        max-width:  280px;         /* cap width so buttons don't stretch too far */
+        width: auto;
+        min-width: 200px;
+        max-width: 280px;
         text-align: center;
     }
 
-    /* Prevent subtitle from breaking mid-dot */
     .hero p {
         white-space: normal;
-        word-break:  keep-all;
-        font-size:   1rem;
+        word-break: keep-all;
+        font-size: 1rem;
     }
 
-    /* --- About Slideshow --- */
-
-    .about-image {
-        height: 250px;
-    }
-
-    /* --- Contact Slideshow --- */
-
-    .contact-image {
-        height: 180px;
-    }
+    /* --- Slideshows --- */
+    .about-image { height: 250px; }
+    .contact-image { height: 180px; }
 
     /* --- Grids --- */
-
     .services-grid,
     .benefits-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-container {
-        gap: 2rem;
-    }
+    .contact-container { gap: 2rem; }
 
     /* --- Brands Showcase --- */
-
-    .brands-grid {
-        gap: 1.5rem;
-    }
+    .brands-grid { gap: 1.5rem; }
 
     .brand-item {
-        padding:   1.25rem 1.75rem;
-        width:     calc(50% - 0.75rem);  /* two per row on mobile */
+        padding: 1.25rem 1.75rem;
+        width: calc(50% - 0.75rem);
     }
 
-    .brand-item img {
-        max-height: 45px;
-    }
-
+    .brand-item img { max-height: 45px; }
 }
 
-
-/* ==========================================================================
-   4. Small Mobile  —  max-width: 480px
-   ========================================================================== */
+/* --- 4. Small Mobile — max-width: 480px --- */
 
 @media (max-width: 480px) {
 
-    /* Layout */
-    .container {
-        padding: 0 1rem;
-    }
+    .container { padding: 0 1rem; }
 
     /* Typography */
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.5rem; }
 
-    .hero p {
-        font-size: 1rem;
-    }
-
-    /* Hero — extra top clearance on very small screens */
-    .hero {
-        padding: 7rem 0 4rem;
-    }
+    /* Hero */
+    .hero { padding: 7rem 0 4rem; }
 
     /* Logo */
-    .logo {
-        font-size: 1.2rem;
-    }
+    .logo { font-size: 1.2rem; }
+    .logo-img { height: 30px; }
 
-    .logo-img {
-        height: 30px;
-    }
-
-    /* Buttons — keep reasonable size on very small screens */
+    /* Buttons */
     .hero .btn {
-        min-width:  180px;
-        font-size:  0.9rem;
-        padding:    0.8rem 1.75rem;
-    }
-
-    /* Language Switcher */
-    .lang-btn {
-        padding:   0.4rem 0.6rem;
-        font-size: 0.75rem;
+        min-width: 180px;
+        font-size: 0.9rem;
+        padding: 0.8rem 1.75rem;
     }
 
     /* Section spacing */
-    .about,
-    .services,
-    .why-us,
-    .contact,
-    .brands-showcase {
+    .about, .services, .why-us, .contact, .brands-showcase {
         padding: 4rem 0;
     }
 
-    /* Brands — single column on very small screens */
-    .brand-item {
-        width: calc(50% - 0.75rem);
-    }
+    /* Brands */
+    .brand-item { width: calc(50% - 0.75rem); }
 
-    /* benefit items stack cleanly */
-    .benefit-item {
-        align-items: flex-start;
-    }
+    .benefit-item { align-items: flex-start; }
 
-    /* Cards */
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
+    .service-card { padding: 2rem 1.5rem; }
 
-    /* About slideshow */
-    .about-image {
-        height: 220px;
-    }
+    .about-image { height: 220px; }
+    .contact-image { height: 160px; }
 
-    /* Contact slideshow */
-    .contact-image {
-        height: 160px;
-    }
+    .map-container { height: 250px; }
 
-    /* Map */
-    .map-container {
-        height: 250px;
-    }
-
-    /* Scroll-to-top button */
     .scroll-top {
-        width:  45px;
+        width: 45px;
         height: 45px;
         bottom: 1rem;
-        right:  1rem;
+        right: 1rem;
     }
-
 }

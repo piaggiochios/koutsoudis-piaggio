@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://piaggio-koutsoudis.gr/sitemap.xml
+Sitemap: https://www.piaggiochios.gr/sitemap.xml

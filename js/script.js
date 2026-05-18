@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 2. State
     // =========================================================================
 
-    const browserLang = navigator.language.startsWith('el') ? 'el' : 'en';
-    const currentLang = localStorage.getItem('preferredLang') || browserLang;
+    const currentLang = localStorage.getItem('preferredLang') || 'el';
 
 
     // =========================================================================

@@ -537,9 +537,13 @@ header.scrolled .mobile-menu-btn {
 }
 
 .service-icon {
-    font-size:     3rem;
     margin-bottom: 1.5rem;
     color:         var(--piaggio-blue);
+}
+
+.service-icon svg {
+    width:  3rem;
+    height: 3rem;
 }
 
 .service-card h3 {
@@ -586,10 +590,15 @@ header.scrolled .mobile-menu-btn {
 }
 
 .benefit-icon {
-    font-size:  1.5rem;
     margin-right: 1rem;
-    color:      var(--piaggio-blue);
-    min-width:  30px;
+    color:        var(--piaggio-blue);
+    min-width:    30px;
+}
+
+.benefit-icon svg {
+    width:  1.75rem;
+    height: 1.75rem;
+    display: block;
 }
 
 .benefit-content h3 {
@@ -643,7 +652,13 @@ header.scrolled .mobile-menu-btn {
 .contact-icon {
     margin-right: 1rem;
     color:        var(--piaggio-blue);
-    width:        20px;
+    min-width:    24px;
+}
+
+.contact-icon svg {
+    width:   1.5rem;
+    height:  1.5rem;
+    display: block;
 }
 
 /* --- Right: Store Slideshow --- */

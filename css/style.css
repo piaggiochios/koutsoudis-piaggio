@@ -765,6 +765,46 @@ footer {
     margin-right: 10px;
 }
 
+.social-links {
+    display:         flex;
+    flex-wrap:       wrap;
+    justify-content: center;
+    gap:             0.75rem;
+    margin-bottom:   1.5rem;
+}
+
+.social-links a {
+    display:         inline-flex;
+    align-items:     center;
+    gap:             0.5rem;
+    padding:         0.65rem 1rem;
+    border:          1px solid rgba(255, 255, 255, 0.25);
+    border-radius:   999px;
+    color:           var(--white);
+    text-decoration: none;
+    font-size:       0.9rem;
+    transition:      border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+    border-color:     var(--piaggio-blue);
+    background-color: var(--piaggio-blue);
+    transform:        translateY(-2px);
+}
+
+.social-links a:focus-visible {
+    outline:        2px solid var(--white);
+    outline-offset: 3px;
+}
+
+.social-links svg {
+    width:       20px;
+    height:      20px;
+    fill:        currentColor;
+    flex-shrink: 0;
+}
+
 .copyright {
     color:     #CCCCCC;
     font-size: 0.9rem;
